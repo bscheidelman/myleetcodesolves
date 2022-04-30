@@ -1,5 +1,9 @@
 class Solution(object):
     def lengthOfLastWord(self, s):
+        #Runtime: 15 ms
+        #Memory: 13.7 MB
+        
+        
         if s.isalpha() == True:
             return len(s)
         eindex = -1
