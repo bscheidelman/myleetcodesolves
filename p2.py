@@ -5,10 +5,6 @@
 #         self.next = next
 class Solution:
     def addTwoNumbers(self, l1: Optional[ListNode], l2: Optional[ListNode]) -> Optional[ListNode]:
-        #Problem: Add Two Numbers
-        
-        
-        #convert the object's into two differnt lists
         li1 = []
         li2 = []
         for pair in [[l1,li1],[l2,li2]]:
@@ -43,9 +39,10 @@ class Solution:
             sumli[-1] -= 10
             sumli.append(1)
         
-        #(MISSING) need to return in proper type --> form of NodeLength Object
-        rval = sumli
-        print(rval)
-                
-        
-        
+        #Change Back Type
+        rval = ListNode(0)
+        rvalend = rval
+        for val in sumli:
+            rvalend.next = ListNode(val)
+            rvalend = rvalend.next
+        return rval.next
